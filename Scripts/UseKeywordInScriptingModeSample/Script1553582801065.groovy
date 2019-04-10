@@ -32,24 +32,17 @@ driver.findElement(By.id('name')).sendKeys('My Name')
 
 By locatorBy = By.id('name')
 
-eyes.checkRegion(locatorBy, 1, 'check checkRegion by selector keyword', true)
+eyes.checkRegion(locatorBy, 'check checkRegion by selector keyword')
 
-//check region by selector
-//CustomKeywords.'com.kms.katalon.keyword.applitools.AdvancedKeywords.checkRegion'(eyes, locatorBy, 1, 'check checkRegion by selector keyword',
-//    true)
-//check element by selector
-//CustomKeywords.'com.kms.katalon.keyword.applitools.AdvancedKeywords.checkRegion'(eyes, locatorBy, 1, 'check checkRegion by selector keyword',
-//    false)
 driver.findElement(By.tagName('button')).click()
 
 WebElement element = driver.findElement(By.xpath('//img[contains(@class,\'diff2\')]'))
 
 //check region by web element
-CustomKeywords.'com.kms.katalon.keyword.applitools.AdvancedKeywords.checkRegion'(eyes, element, 0, 'check checkRegion by web element keyword',
-    false)
+eyes.checkRegion(element, 'check checkRegion by web element keyword')
 
 //check window not including eyes set up
-CustomKeywords.'com.kms.katalon.keyword.applitools.AdvancedKeywords.checkWindow'(eyes, 'check checkWindow')
+eyes.checkWindow('check checkWindow')
 
 CustomKeywords.'com.kms.katalon.keyword.applitools.EyesKeywords.eyesClose'(eyes)
 
