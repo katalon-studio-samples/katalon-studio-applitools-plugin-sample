@@ -1,4 +1,7 @@
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import org.openqa.selenium.WebElement
+
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -16,6 +19,8 @@ import internal.GlobalVariable as GlobalVariable
 WebUI.openBrowser('')
 
 WebUI.navigateToUrl('http://automationpractice.com/index.php')
+
+WebUI.setViewPortSize(800, 600)
 
 CustomKeywords.'com.kms.katalon.keyword.applitools.BasicKeywords.checkWindow'('uniqueString1')
 
