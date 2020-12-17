@@ -1,6 +1,9 @@
 import org.openqa.selenium.By as By
 import org.openqa.selenium.WebDriver as WebDriver
 import org.openqa.selenium.WebElement as WebElement
+import org.openqa.selenium.remote.RemoteWebElement
+
+import com.applitools.eyes.Location
 import com.applitools.eyes.RectangleSize as RectangleSize
 import com.applitools.eyes.selenium.Eyes as Eyes
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
@@ -23,6 +26,8 @@ import internal.GlobalVariable as GlobalVariable
 //use 'https://applitools.com/helloworld2?diff1' to make changes to page
 WebUI.openBrowser('https://applitools.com/helloworld2?diff2')
 
+WebUI.setViewPortSize(800, 600)
+
 //initialize eyes
 Eyes eyes = CustomKeywords.'com.kms.katalon.keyword.applitools.EyesKeywords.eyesOpen'('uniqueString0', null)
 
@@ -39,7 +44,7 @@ driver.findElement(By.tagName('button')).click()
 WebElement element = driver.findElement(By.xpath('//img[contains(@class,\'diff2\')]'))
 
 //check region by web element
-eyes.checkRegion(element, 'check checkRegion by web element keyword')
+CustomKeywords.'com.kms.katalon.keyword.applitools.BasicKeywords.checkElement'(eyes, element)
 
 //check window not including eyes set up
 eyes.checkWindow('check checkWindow')
